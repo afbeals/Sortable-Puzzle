@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="jQuery sortable ninja" content="using jQuery practice creating sortable content">
+  <title>Sortable Ninja</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+  li { margin: 5px; padding: 5px; }
+  </style>
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable({
+      revert: true
+    });
+    $( "#draggable" ).draggable({
+      connectToSortable: "#sortable",
+      helper: "clone",
+      revert: "invalid"
+    });
+    $( "ul, li" ).disableSelection();
+  });
+  </script>
+</head>
+<body>
+  <ul>
+    <li id="draggable"></li>
+  </ul>
+  <ul id="sortable">
+    <li><img src="sort1.png" alt="ninja img 1"></li>
+    <li><img src="sort2.png" alt="ninja img 2"></li>
+    <li><img src="sort3.png" alt="ninja img 3"></li>
+    <li><img src="sort4.png" alt="ninja img 4"></li>
+    <li><img src="sort5.png" alt="ninja img 5"></li>
+  </ul>
+</body></html>
